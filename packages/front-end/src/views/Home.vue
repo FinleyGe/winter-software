@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {RouterView} from "vue-router";
-</script>
 
+</script>
 <template>
-  <router-view />
+  this is home page
 </template>
 
 <style scoped lang="scss">
+
 </style>

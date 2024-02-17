@@ -20,16 +20,16 @@
     "eslint": "^8.56.0",
     "pinia": "^2.1.7",
     "postcss": "^8.4.33",
+    "sass": "^1.71.0",
     "scss": "^0.2.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
+    "vite-aliases": "^0.11.5",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.25"
   },
   "eslintConfig": {
-    "extends": [
-      "@finley_ge/eslint-config-vue"
-    ]
+    "extends": "@finley_ge/eslint-config-vue"
   }
 }
