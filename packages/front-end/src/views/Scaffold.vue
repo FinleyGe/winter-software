@@ -6,7 +6,7 @@
     <header
       style="height: 50px"
     >
-      header
+      <router-view name="header" />
     </header>
     <main style="min-height: calc(100vh - 50px - 30px);">
       <router-view />
@@ -14,7 +14,7 @@
     <footer
       style="height: 30px"
     >
-      footer
+      <router-view name="footer" />
     </footer>
   </div>
 </template>

@@ -5,6 +5,16 @@ const routes: Array<RouteRecordRaw> = [{
   path: "/",
   name: "Scaffold",
   component: () => import("@views/Scaffold.vue"),
+  children: [
+    {
+      path: "",
+      name: "Home",
+      components: {
+        default: () => import("@views/Home.vue"),
+        header: () => import("@views/student/Header.vue"),
+      },
+    },
+  ],
 },{
   path:"/login",
   name:"Login",
