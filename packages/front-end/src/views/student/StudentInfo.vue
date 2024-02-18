@@ -2,10 +2,12 @@
 import { ref } from "vue";
 import type { Form } from "@api/type";
 
-const student_info = ref<Form>("");
+const student_info = ref<Form | null>();
+
 </script>
 <template>
-  Student Info
+  TODO: Student Info
+  {{ student_info }}
 </template>
 
 <style scoped lang="scss">

@@ -1,3 +1,4 @@
+import { useUserStore } from "@/store";
 import {createRouter, createWebHistory} from "vue-router";
 import type {RouteRecordRaw} from "vue-router";
 
@@ -10,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [{
       path: "",
       name: "Home",
       components: {
-        default: () => import("@views/Home.vue"),
+        default: () => import("@views/student/StudentInfo.vue"),
         header: () => import("@views/student/Header.vue"),
       },
     },
@@ -22,7 +23,18 @@ const routes: Array<RouteRecordRaw> = [{
 }
 ];
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+router.beforeEach((to, _, next) => {
+  const userStore = useUserStore();
+  if (to.name !== "Login" && !userStore.isLogin) {
+    next({name: "Login"});
+  } else {
+    next();
+  }
+});
+
+export default router;
