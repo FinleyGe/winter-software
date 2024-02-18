@@ -30,7 +30,8 @@ function handelLogin(){
     message: "登录成功"
   });
   userStore.isLogin = true;
-  router.push("/");
+  userStore.role = "student";
+  router.push("/student");
 }
 
 onMounted(() => {

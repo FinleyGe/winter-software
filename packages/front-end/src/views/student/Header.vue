@@ -5,8 +5,8 @@ import type {NavItem} from "@components/Nav";
 
 const index = ref<number>(0);
 const items = <NavItem[]>[
-  {name:"个人中心"},
-  {name:"导师信息"},
+  {name:"个人中心", path:"/student"},
+  {name:"导师信息", path:"/student/teacher"},
 ];
 
 </script>
