@@ -1,6 +1,6 @@
 import { useUserStore } from "@/store";
-import {createRouter, createWebHistory} from "vue-router";
-import type {RouteRecordRaw} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [{
   path: "/student",
@@ -23,10 +23,38 @@ const routes: Array<RouteRecordRaw> = [{
       },
     }
   ],
-},{
-  path:"/login",
-  name:"Login",
-  component:()=>import("@views/Login.vue")
+}, {
+  path: "/teacher",
+  name: "Scaffold",
+  component: () => import("@views/Scaffold.vue"),
+  children: [
+    {
+      path: "",
+      name: "Application",
+      components: {
+        default: () => import("@views/teacher/Application.vue"),
+        header: () => import("@views/teacher/Header.vue"),
+      },
+    }, {
+      path: "slist",
+      name: "StudentList",
+      components: {
+        default: () => import("@views/teacher/List.vue"),
+        header: () => import("@views/teacher/Header.vue"),
+      },
+    },{
+      path: "cipher",
+      name: "StudentTeacher",
+      components: {
+        default: () => import("@views/teacher/Cipher.vue"),
+        header: () => import("@views/teacher/Header.vue"),
+      },
+    }
+  ],
+}, {
+  path: "/login",
+  name: "Login",
+  component: () => import("@views/Login.vue")
 }
 ];
 
@@ -38,10 +66,11 @@ const router = createRouter({
 router.beforeEach((to, _, next) => {
   const userStore = useUserStore();
   if (to.name !== "Login" && !userStore.isLogin) {
-    next({name: "Login"});
+    next({ name: "Login" });
   } else {
     next();
   }
 });
 
 export default router;
+
