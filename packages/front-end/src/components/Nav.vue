@@ -41,11 +41,11 @@ const handleClick = (item: NavItem, i: number) => {
   align-items: center;
   border-radius: 0.5rem;
   &:hover {
-    background-color: #eee;
+    background-color: #8ee4ef;
   }
 
   &.chosen {
-    background-color: #fff;
+    background-color: #00abe9;
   }
 }
 </style>
