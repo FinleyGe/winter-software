@@ -11,7 +11,7 @@ const items = <NavItem[]>[
 
 </script>
 <template>
-  <div class="base bg-blue-500 flex">
+  <div class="base bg-blue-300 flex">
     <Nav
       v-model="index"
       :items="items"
