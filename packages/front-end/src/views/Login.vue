@@ -2,55 +2,33 @@
 import Input from "@components/Input.vue";
 import Checkbox from "@components/Checkbox.vue";
 import { useNotice } from "@components/Notice";
-import { useUserStore } from "@/store";
-import router from "@/router";
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 
 const user = ref<string>("");
 const password = ref<string>("");
 const remember = ref<boolean>(false);
 const notice = useNotice();
-const userStore = useUserStore();
-
 function handelLogin(){
-  // TODO: This is a fake login function
-  if (user.value === "" || password.value === "") {
-    notice({
-      type: "error",
-      message: "帐号或密码不能为空"
-    });
-    return;
-  }
-  if (remember.value) {
-    localStorage.setItem("user", user.value);
-    localStorage.setItem("password", password.value);
-  }
   notice({
     type: "success",
     message: "登录成功"
   });
-  userStore.isLogin = true;
-  userStore.role = "student";
-  router.push("/student");
+  notice({
+    type: "info",
+    message: "登录成功"
+  });
+  notice({
+    type: "error",
+    message: "登录失败"
+  });
 }
-
-onMounted(() => {
-  const u = localStorage.getItem("user");
-  const p = localStorage.getItem("password");
-  if (u && p) {
-    user.value = u;
-    password.value = p;
-    remember.value = true;
-  }
-});
-
 </script>
 <template>
   <div class="min-h-svh w-full bg-gray-50 base">
     <div class="left flex items-center">
       <img
-        src="/login-pic.png"
-        style="width: 400px;"
+        src="/login.jpg"
+        style="width: 100%;height: 100vh;"
         alt="logo"
         class="mx-auto"
       >
