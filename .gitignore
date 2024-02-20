@@ -1,3 +1,5 @@
 node_modules
 .turbo
 turbo.json
+.DS_Store
+pnpm-lock.yaml
