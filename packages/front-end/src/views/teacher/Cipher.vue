@@ -33,50 +33,49 @@ function handelPwd() {
 
 </script>
 <template>
-  <body>
-    <div class="container">
-      <div class="form">
-        <h1 class="text-2xl">
-          修改密码
-        </h1>
-        <span class="text-gray-400 my-2 text-sm"> 初始密码为 "zjut" + 工号后六位,忘记密码请联系管理员</span>
-        <Input v-model="originalPassword" label="原密码" placeholder="请输入原密码" type="password" />
-        <Input v-model="newPassword" label="新密码" placeholder="请输入新密码" type="password" />
-        <Input v-model="confirmPassword" label="重输新密码" placeholder="请重新输入新密码" type="password" />
-        <button class="bg-blue-500 text-white py-2 px-4 rounded-md my-4 hover:bg-blue-300 transition-all duration-100"
-          style="width: 100%;" @click="handelPwd">
-          登录
-        </button>
-      </div>
-    </div>
-  </body>
+  <div class="form">
+    <h1 class="text-2xl">
+      修改密码
+    </h1>
+    <span class="text-gray-400 my-2 text-sm"> 初始密码为 "zjut" + 工号后六位,忘记密码请联系管理员</span>
+    <Input
+      v-model="originalPassword"
+      label="原密码"
+      placeholder="请输入原密码"
+      type="password"
+    />
+    <Input
+      v-model="newPassword"
+      label="新密码"
+      placeholder="请输入新密码"
+      type="password"
+    />
+    <Input
+      v-model="confirmPassword"
+      label="重输新密码"
+      placeholder="请重新输入新密码"
+      type="password"
+    />
+    <button
+      class="bg-blue-500 text-white py-2 px-4 rounded-md my-4 hover:bg-blue-300 transition-all duration-100"
+      style="width: 100%;"
+      @click="handelPwd"
+    >
+      登录
+    </button>
+  </div>
 </template>
 
 <style scoped lang="scss">
-body {
-  background: linear-gradient(to bottom, #b2dffb, #E6E6FA);
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #b2dffb, #E6E6FA);
-  margin: 0;
-  padding: 0;
-}
 
 .form {
-  background-color: #FFFFFF;
-  width: 33%;
-  border-radius: 5px;
+  width: fit-content;
+  margin-inline: auto;
+  border-radius: 0.25rem;
+  background-color: white;
   padding: 40px;
   text-align: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 </style>

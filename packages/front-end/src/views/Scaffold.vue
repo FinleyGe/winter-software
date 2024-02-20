@@ -17,14 +17,14 @@ function handleFloatButtonClick() {
     >
       <router-view name="header" />
     </header>
-    <main style="min-height: calc(100vh - 50px - 30px);">
+    <main style="min-height: calc(100vh - 50px);">
       <router-view />
     </main>
-    <footer
-      style="height: 30px"
-    >
-      <router-view name="footer" />
-    </footer>
+    <!-- <footer -->
+    <!--   style="height: 30px" -->
+    <!-- > -->
+    <!--   <router-view name="footer" /> -->
+    <!-- </footer> -->
     <FloatButton @click="handleFloatButtonClick" />
     <Chat
       v-show="isChat"
@@ -32,3 +32,13 @@ function handleFloatButtonClick() {
     />
   </div>
 </template>
+
+<style scoped lang="scss">
+main {
+  background: linear-gradient(to bottom, #b2dffb, #E6E6FA);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+</style>
