@@ -30,8 +30,8 @@ function handelLogin(){
     message: "登录成功"
   });
   userStore.isLogin = true;
-  userStore.role = "student";
-  router.push("/student");
+  userStore.role = "teacher";
+  router.push("/teacher");
 }
 
 onMounted(() => {
@@ -49,8 +49,8 @@ onMounted(() => {
   <div class="min-h-svh w-full bg-gray-50 base">
     <div class="left flex items-center">
       <img
-        src="/login-pic.png"
-        style="width: 400px;"
+        src="/login.jpg"
+        style="width: 100%;height: 100vh;"
         alt="logo"
         class="mx-auto"
       >
@@ -106,3 +106,4 @@ onMounted(() => {
   }
 }
 </style>
+
