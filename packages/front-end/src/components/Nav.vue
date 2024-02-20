@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import type { NavItem } from "Nav";
+import type { NavItem } from "./Nav";
 
 defineProps<{
   items: Array<NavItem>,

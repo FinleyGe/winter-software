@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky",
-    "commitlint": "commitlint --edit",
-    "lint": "pnpm -F front-end lint"
+    "commitlint": "commitlint --edit"
   },
   "keywords": [],
   "author": "",

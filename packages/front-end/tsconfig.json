@@ -49,6 +49,9 @@
       ],
       "@student/*": [
         "src/views/student/*"
+      ],
+      "@teacher/*": [
+        "src/views/teacher/*"
       ]
     }
   },
