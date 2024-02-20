@@ -5,35 +5,33 @@ import type { RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/student",
-    name: "Scaffold",
+    name: "Scaffold_Student",
     component: () => import("@views/Scaffold.vue"),
-    children: [
-      {
-        path: "/",
-        name: "StudentInfo",
-        components: {
-          default: () => import("@views/student/StudentInfo.vue"),
-          header: () => import("@views/student/Header.vue"),
-        },
-        meta: {
-          title:"学生信息"
-        }
+    children: [{
+      path: "",
+      name: "StudentInfo",
+      components: {
+        default: () => import("@views/student/StudentInfo.vue"),
+        header: () => import("@views/student/Header.vue"),
+      },
+      meta: {
+        title:"学生信息"
       }
-      // , {
-      //   path: "teacher",
-      //   name: "StudentTeacher",
-      //   components: {
-      //     default: () => import("@views/student/Teacher.vue"),
-      //     header: () => import("@views/student/Header.vue"),
-      //   },
-      //   meta: {
-      //     title:"教师信息"
-      //   }
-      // }
+    }, {
+      path: "teacher",
+      name: "StudentTeacher",
+      components: {
+        default: () => import("@views/student/Teacher.vue"),
+        header: () => import("@views/student/Header.vue"),
+      },
+      meta: {
+        title:"教师信息"
+      }
+    }
     ],
   }, {
     path: "/teacher",
-    name: "Scaffold",
+    name: "Scaffold_Teacher",
     component: () => import("@views/Scaffold.vue"),
     children: [
       {
